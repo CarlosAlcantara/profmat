@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Meu Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Abas Laterais</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bem-vindo ao Meu Site!</h1>
-    <p>Este é um exemplo de site hospedado no GitHub Pages.</p>
+    <div class="container">
+        <div class="sidebar">
+            <button class="tablink" onclick="openTab('home')">Home</button>
+            <button class="tablink" onclick="openTab('sobre')">Sobre</button>
+            <button class="tablink" onclick="openTab('servicos')">Serviços</button>
+            <button class="tablink" onclick="openTab('contato')">Contato</button>
+        </div>
+
+        <div class="content">
+            <div id="home" class="tabcontent active">
+                <h1>Bem-vindo à Home</h1>
+                <p>Este é o conteúdo da página inicial.</p>
+            </div>
+
+            <div id="sobre" class="tabcontent">
+                <h1>Sobre Nós</h1>
+                <p>Informações sobre a nossa empresa.</p>
+            </div>
+
+            <div id="servicos" class="tabcontent">
+                <h1>Nossos Serviços</h1>
+                <p>Descrição dos serviços que oferecemos.</p>
+            </div>
+
+            <div id="contato" class="tabcontent">
+                <h1>Contato</h1>
+                <p>Entre em contato conosco.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Esconde todos os conteúdos das abas
+            var tabcontents = document.getElementsByClassName("tabcontent");
+            for (var i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].classList.remove("active");
+            }
+
+            // Mostra o conteúdo da aba selecionada
+            document.getElementById(tabName).classList.add("active");
+        }
+    </script>
 </body>
 </html>
